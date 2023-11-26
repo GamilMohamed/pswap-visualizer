@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgamil <mgamil@42.student.fr>              +#+  +:+       +#+        */
+/*   By: mgamil <mgamil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 06:22:19 by mgamil            #+#    #+#             */
-/*   Updated: 2023/11/26 04:52:44 by mgamil           ###   ########.fr       */
+/*   Updated: 2023/11/26 19:09:25 by mgamil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	algo_two(t_pile *pile_a, t_pile *pile_b);
 
 void	algo_five(t_pile *pile_a, t_pile *pile_b);
 /*	PRINT.C				*/
-void	ft_printab(t_pile pile_a, t_pile pile_b);
+void	ft_printab(t_pile pile_a, t_pile pile_b, char *str);
 /*	MATH.C				*/
 int		ft_getmin(t_pile pile);
 int		ft_getmax(t_pile pile);

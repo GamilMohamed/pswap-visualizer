@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgamil <mgamil@42.student.fr>              +#+  +:+       +#+        */
+/*   By: mgamil <mgamil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 09:26:22 by mgamil            #+#    #+#             */
-/*   Updated: 2023/11/26 04:43:40 by mgamil           ###   ########.fr       */
+/*   Updated: 2023/11/26 16:27:22 by mgamil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void	ft_pushmin(t_pile *pile, char c, t_pile *autre)
 void	pushswap_rrr(t_pile *pile_a, t_pile *pile_b, int x)
 {
 	pushswap_rrotate(pile_a, pile_b, 'r');
-	pushswap_rrotate(pile_b, pile_a, 'b');
+	pushswap_rrotate(pile_b, pile_a, 'x');
 }
 
 void	pushswap_rr(t_pile *pile_a, t_pile *pile_b, int x)
 {
 	pushswap_rotate(pile_a, pile_b, 'r');
-	pushswap_rotate(pile_b, pile_a, 'b');
+	pushswap_rotate(pile_b, pile_a, 'x');
 }

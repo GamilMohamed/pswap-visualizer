@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgamil <mgamil@42.student.fr>              +#+  +:+       +#+        */
+/*   By: mgamil <mgamil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 21:15:51 by mgamil            #+#    #+#             */
-/*   Updated: 2023/11/26 04:59:11 by mgamil           ###   ########.fr       */
+/*   Updated: 2023/11/26 16:17:11 by mgamil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ void	pushswap_rotate(t_pile *pile, t_pile *autre, char c)
 	ft_rotateup(pile);
 	pile->tab[pile->size - 1] = first;
 	if (c == 'b')
-		ft_printab(*autre, *pile);
-	else
-		ft_printab(*pile, *autre);
+		ft_printab(*autre, *pile, "rb");
+	else if (c == 'a')
+		ft_printab(*pile, *autre, "ra");
+	else if (c == 'r')
+		ft_printab(*pile, *autre, "rr");
 }
 
 void	pushswap_rrotate(t_pile *pile, t_pile *autre, char c)
@@ -39,9 +41,11 @@ void	pushswap_rrotate(t_pile *pile, t_pile *autre, char c)
 	ft_rotatedown(pile);
 	pile->tab[0] = last;
 	if (c == 'b')
-		ft_printab(*autre, *pile);
-	else
-		ft_printab(*pile, *autre);
+		ft_printab(*autre, *pile, "rrb");
+	else if (c == 'a')
+		ft_printab(*pile, *autre, "rra");
+	else if (c == 'r')
+		ft_printab(*pile, *autre, "rrr");
 }
 
 int	pushswap_push(t_pile *dest, t_pile *src, char c, int *tab)
@@ -59,12 +63,10 @@ int	pushswap_push(t_pile *dest, t_pile *src, char c, int *tab)
 	while (++i < temp)
 		tab[i - 1] = tab[i];
 	if (c == 'a')
-		ft_printab(*dest, *src);
-	else
-		ft_printab(*src, *dest);
+		ft_printab(*dest, *src, "pa");
+	else if (c == 'b')
+		ft_printab(*src, *dest, "pb");
 	return (1);
-		
-	// return (ft_printf("p%c\n", c));
 }
 
 void	pushswap_swap(t_pile *pile, char c, t_pile *autre)
@@ -82,8 +84,9 @@ void	pushswap_swap(t_pile *pile, char c, t_pile *autre)
 	pile->tab[0] = pile->tab[1];
 	pile->tab[1] = temp;
 	if (c == 'a')
-		ft_printab(*pile, *autre);
-	else
-		ft_printab(*autre, *pile);
-	// ft_printf("s%c\n", c);
+		ft_printab(*pile, *autre, "sa");
+	else if (c == 'b')
+		ft_printab(*autre, *pile, "sb");
+	else if (c == 's')
+		ft_printab(*autre, *pile, "ss");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   misc.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgamil <mgamil@42.student.fr>              +#+  +:+       +#+        */
+/*   By: mgamil <mgamil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 05:47:02 by mgamil            #+#    #+#             */
-/*   Updated: 2023/11/26 04:07:04 by mgamil           ###   ########.fr       */
+/*   Updated: 2023/11/26 16:26:03 by mgamil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	ft_exit(t_pile *pile_a, t_pile *pile_b, int boolean)
 {
 	// free(pile_a->tab);
 	// free(pile_b->tab);
+	ft_printab(*pile_a, *pile_b, "DONE");
 	if (boolean == 1)
 		;
 	else if (boolean == 2)

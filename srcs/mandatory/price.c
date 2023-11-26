@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   price.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgamil <mgamil@42.student.fr>              +#+  +:+       +#+        */
+/*   By: mgamil <mgamil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 19:10:33 by mgamil            #+#    #+#             */
-/*   Updated: 2023/11/26 04:37:45 by mgamil           ###   ########.fr       */
+/*   Updated: 2023/11/26 16:11:21 by mgamil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_domovement(t_pile *pile_a, t_pile *pile_b, int index[5])
 		if (index[2] > 0)
 			pushswap_rrr(pile_a, pile_b, index[2]--);
 		else
-			pushswap_rrotate(pile_a, pile_b, index[1]);
+			pushswap_rrotate(pile_a, pile_b, 'a');
 		index[1]--;
 	}
 	while (index[2] > 0)
