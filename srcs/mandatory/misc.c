@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   misc.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgamil <mgamil@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mgamil <mgamil@42.student.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 05:47:02 by mgamil            #+#    #+#             */
-/*   Updated: 2023/11/26 16:26:03 by mgamil           ###   ########.fr       */
+/*   Updated: 2023/11/26 22:02:41 by mgamil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ void	ft_exit(t_pile *pile_a, t_pile *pile_b, int boolean)
 	// free(pile_a->tab);
 	// free(pile_b->tab);
 	ft_printab(*pile_a, *pile_b, "DONE");
-	if (boolean == 1)
-		;
-	else if (boolean == 2)
-		ft_printf("%rmalloc failed%0\n");
-	else
-		ft_printf("%rSort failed%0\n");
+	// if (boolean == 1)
+	// 	;
+	// else if (boolean == 2)
+	// 	ft_printf("%rmalloc failed%0\n");
+	// else
+	// 	ft_printf("%rSort failed%0\n");
 	exit(EXIT_SUCCESS);
 }

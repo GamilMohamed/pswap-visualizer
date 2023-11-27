@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgamil <mgamil@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mgamil <mgamil@42.student.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 06:22:19 by mgamil            #+#    #+#             */
-/*   Updated: 2023/11/26 19:09:25 by mgamil           ###   ########.fr       */
+/*   Updated: 2023/11/27 03:42:33 by mgamil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,31 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include <ncurses.h>
+# include <time.h>
+# include <string.h>
+
+# define COL_RE 9
+# define COL_ER 10
+# define COL_OK 11
+# define COL_ST 12
+# define COL_SU 13
+# define OPTIONS 5
+# define WIN_TOO_SMALL "Window should be at least 120 wide\n"
+# define INPUT_TOO_HIGH "Value too high\n"
+# define INPUT_TOO_LOW "Value too low\n"
+# define INPUT_INVALID "Invalid input!\n"
+# define QUIT_OK "Quitted successfully!\n"
+
+
+#define MAGENTA_TEXT attron(COLOR_PAIR(COL_ST))
+#define CYAN_TEXT attron(COLOR_PAIR(COL_SU))
+#define GREEN_TEXT attron(COLOR_PAIR(COL_OK))
+#define RED_TEXT attron(COLOR_PAIR(COL_ER))
+#define RESET_TEXT attron(COLOR_PAIR(COL_RE))
+
+#define BOLD attron(A_BOLD);
+#define NO_BOLD attroff(A_BOLD);
 
 typedef struct s_pile
 {
@@ -23,12 +48,24 @@ typedef struct s_pile
 	int	total;
 }		t_pile;
 
+typedef struct s_data
+{
+	int	*arr;
+	int	size;
+
+	int	*barr;
+	int	bsize;
+
+	int	row;
+	int	col;
+}		t_data;
+
 /*	PARSE.C				*/
-int		ft_double(int *tab, int size);
 int		ft_freetab(char **tab, int boolean);
-int		*ft_duptab(int *tab, int size);
-void	ft_whileresij(char **res, int i);
-int		*parse_args(int ac, char **av, int *size);
+int		ft_double(long long int *tab, int size);
+int		*ft_duptab(long long int *tab, int size);
+int		ft_whileresij(char **res, int i);
+int		*parse_args(char *str, int *size);
 /*	MISC.C				*/
 void	ft_checksortav(t_pile *pile_a, int size);
 int		ft_checkacav(int ac, char **av);
@@ -65,5 +102,12 @@ void	ft_pricecalculator(t_pile *pile_a, t_pile *pile_b);
 int		ft_domovement(t_pile *pile_a, t_pile *pile_b, int index[5]);
 int		ft_totalprice(int price_a, int price_b);
 int		ft_price(t_pile *pile, int index);
+/* TUI.C				*/
+int	menu(t_data *data);
+void	init(void);
+void	header(void);
+int	valid(char *str);
+int	isDuplicate(int *array, int size, int value);
+void	randomnumbergenerator(int arr[50], int max);
 
 #endif

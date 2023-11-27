@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/mohazerr/Documents/Perso/visualizer-pswap",
-      "program": "/Users/mohazerr/Documents/Perso/visualizer-pswap/build/Debug/outDebug"
+      "cwd": "/Users/mohazerr/Documents/Perso/visualizer-pswap/srcs/mandatory",
+      "program": "/Users/mohazerr/Documents/Perso/visualizer-pswap/srcs/mandatory/build/Debug/outDebug"
     }
   ]
 }
